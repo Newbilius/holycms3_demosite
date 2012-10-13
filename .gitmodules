@@ -1,0 +1,3 @@
+[submodule "engine"]
+	path = engine
+	url = git@github.com:Newbilius/holycms3.git

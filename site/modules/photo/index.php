@@ -1,0 +1,11 @@
+<?
+IncludeComponent("catalog20","",Array(
+		"detail_template"=>"",
+		"items_template"=>"photo",
+		"folders_template"=>"photo_folders",
+		"table"=>"foto",
+		"url"=>"/photo/#id#",
+		"add_to_bread"=>"caption",
+		"set_title"=>"caption",
+));
+?>

@@ -1,0 +1,14 @@
+<?
+IncludeComponent("news20","",Array(
+		"detail_template"=>"news",
+		"list_template"=>"news",
+		//"order"=>"item_date",
+		"table"=>"news",
+		//"count"=>9999,
+		"url"=>"/news/#id#",
+		"add_to_bread"=>"caption",
+		"set_title"=>"caption",
+		//"draw_paginator"=>false,
+		//"paginator_template"=>"advance_stock"
+));
+?>
