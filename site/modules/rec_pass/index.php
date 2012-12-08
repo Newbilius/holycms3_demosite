@@ -23,11 +23,11 @@ if (isset($_POST['go'])) {
         if (!isset($tmp_item['id']))
             $tmp_item['id'] = 0;
         if (!$tmp_item['id'])
-            $errors = array("Извините, такого email не найдено!");
+            $errors = array("РР·РІРёРЅРёС‚Рµ, С‚Р°РєРѕРіРѕ email РЅРµ РЅР°Р№РґРµРЅРѕ!");
     };
 
     if ($errors === true) {
-        echo "<p style='color:green'>вам отослана ссылка на смену пароля!</p>";
+        echo "<p style='color:green'>РІР°Рј РѕС‚РѕСЃР»Р°РЅР° СЃСЃС‹Р»РєР° РЅР° СЃРјРµРЅСѓ РїР°СЂРѕР»СЏ!</p>";
 
         $uid_rec = MD5(uniqid() . time());
         $res->Update($tmp_item['id'], Array(
@@ -35,13 +35,13 @@ if (isset($_POST['go'])) {
         ),false);
         $link = GetSiteURL() . "/recovery_pass_complete/?email=" . $_POST['email'] . "&recovery=" . $uid_rec;
         $href="<a href='$link'>$link</a>";
-        $message = "Для смены пароля пройдите по ссылке:$href. <br> 
-            Если вы не собирались менять пароль - просто проигнорируйте это сообщение или оьратитесь к администрации сайта!";
+        $message = "Р”Р»СЏ СЃРјРµРЅС‹ РїР°СЂРѕР»СЏ РїСЂРѕР№РґРёС‚Рµ РїРѕ СЃСЃС‹Р»РєРµ:$href. <br> 
+            Р•СЃР»Рё РІС‹ РЅРµ СЃРѕР±РёСЂР°Р»РёСЃСЊ РјРµРЅСЏС‚СЊ РїР°СЂРѕР»СЊ - РїСЂРѕСЃС‚Рѕ РїСЂРѕРёРіРЅРѕСЂРёСЂСѓР№С‚Рµ СЌС‚Рѕ СЃРѕРѕР±С‰РµРЅРёРµ РёР»Рё РѕСЊСЂР°С‚РёС‚РµСЃСЊ Рє Р°РґРјРёРЅРёСЃС‚СЂР°С†РёРё СЃР°Р№С‚Р°!";
 
         
         global $_OPTIONS;
 
-        HolyMail($_OPTIONS['back_email'], $_OPTIONS['mail'], "Восстановление пароля на сайте ".$_SERVER['HTTP_HOST'], $message);
+        HolyMail($_OPTIONS['back_email'], $_OPTIONS['mail'], "Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ РЅР° СЃР°Р№С‚Рµ ".$_SERVER['HTTP_HOST'], $message);
     } else {
         foreach ($errors as $error) {
             ?>
@@ -57,7 +57,7 @@ $_POST = fill_empty_array($_POST, Array(
 ?>
 
 <form method="post">
-    E-mail, на который вы регистрировались:<br>
+    E-mail, РЅР° РєРѕС‚РѕСЂС‹Р№ РІС‹ СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°Р»РёСЃСЊ:<br>
     <input name="email" value="<? echo $_POST['email'] ?>" style="width: 300px;"><br>
 
     <input type="submit">

@@ -5,13 +5,14 @@ $_top_menu[] = Array(
 );
 
 $_top_menu[] = Array(
-    "url" => "/adm/photo_add.php",
-    "caption" => "Çàãðóçêà ôîòî â àëüáîì",
+    "url" => "/engine/admin/photo_add.php",
+    "caption" => "Ð—Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° Ñ„Ð¾Ñ‚Ð¾ Ð² Ð°Ð»ÑŒÐ±Ð¾Ð¼",
     "admin_right" => false,
     "parent" => "utilits",
 );
 
 $_photo_id="foto";
 $_folder_selector=true;
-$_CONFIG['CACHE_SYSTEM']=false;
+$_CONFIG['CACHE_SYSTEM']=true;
+$_CONFIG['CACHE_MODE']="files";
 ?>

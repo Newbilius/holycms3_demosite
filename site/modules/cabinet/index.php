@@ -22,8 +22,8 @@ if ($user->IsAuth()) {
 
         if ($_POST['go'] == 2) {
             $valid = new HolyValidator(Array(
-                        "pass1" => "пароль",
-                        "pass2" => "повтор пароля",
+                        "pass1" => "РїР°СЂРѕР»СЊ",
+                        "pass2" => "РїРѕРІС‚РѕСЂ РїР°СЂРѕР»СЏ",
                     ));
             $valid->AddRule("not_empty", 'pass1')
                     ->AddRule("not_empty", 'pass2')
@@ -50,28 +50,28 @@ if ($user->IsAuth()) {
     ?>
 
 
-    <h2>Данные</h2>
+    <h2>Р”Р°РЅРЅС‹Рµ</h2>
     E-mail: <b><? echo $info['email']; ?></b>
     <form method="post">
         <input type="hidden" name="go" value="1">
 
-        ФИО:<br>
+        Р¤РРћ:<br>
         <input name="fio" value="<? echo $info['fio']; ?>" style="width: 300px;"><br>
-        Адрес доставки:<br>
+        РђРґСЂРµСЃ РґРѕСЃС‚Р°РІРєРё:<br>
         <textarea style="width: 300px;height:250px;" name="address"><? echo $info['address']; ?></textarea>
-        <input type="submit" value="сохранить">
+        <input type="submit" value="СЃРѕС…СЂР°РЅРёС‚СЊ">
     </form>
 
     <hr>
-    <h2>Смена пароля</h2>
+    <h2>РЎРјРµРЅР° РїР°СЂРѕР»СЏ</h2>
     <form method="post">
         <input type="hidden" name="go" value="2">
 
-        Новый пароль:<br>
+        РќРѕРІС‹Р№ РїР°СЂРѕР»СЊ:<br>
         <input type="password" name="pass1" value="" style="width: 300px;"><br>
-        Повтор нового пароля:<br>
+        РџРѕРІС‚РѕСЂ РЅРѕРІРѕРіРѕ РїР°СЂРѕР»СЏ:<br>
         <input type="password" name="pass2" value="" style="width: 300px;"><br>
-        <input type="submit" value="сохранить">
+        <input type="submit" value="СЃРѕС…СЂР°РЅРёС‚СЊ">
     </form>
     <br>
 
@@ -90,71 +90,9 @@ if (isset($_GET['exit'])) {
 
 
 <? if ($user->IsAuth()) { ?>
-    <hr><a href="?exit=yes">выйти</a>
+    <hr><a href="?exit=yes">РІС‹Р№С‚Рё</a>
 <? }; ?>
 
 <? if (!$user->IsAuth()) { ?>
-    <hr>  <a href="/recovery_pass/">забыли пароль?</a>
+    <hr>  <a href="/recovery_pass/">Р·Р°Р±С‹Р»Рё РїР°СЂРѕР»СЊ?</a>
 <? }; ?>
-<?
-/*
-  $_POST = clear_array($_POST);
-
-  if (isset($_POST['go'])) {
-  $valid = new HolyValidator(Array(
-  "fio" => "Имя",
-  "info" => "обратный адрес или телефон",
-  "text" => "текст",
-  ));
-
-  $valid->AddRule("not_empty", 'fio')
-  ->AddRule("not_empty", 'info')
-  ->AddRule("not_empty", 'text');
-
-  $valid->Check($_POST);
-
-  $errors = $valid->Complete();
-
-  if ($errors === true) {
-  echo "<p style='color:green'>сообщение отправлено успешно</p>";
-
-
-  $mail_text = "ФИО:" . $_POST["fio"] . "<BR>";
-  $mail_text.="Данные для связи:" . $_POST["info"] . "<BR>";
-  $mail_text.="Вопрос:<BR>" . $_POST["text"] . "<BR>";
-  global $_OPTIONS;
-
-  unset($_POST);
-  $_POST=array();
-
-  HolyMail("info@" . $_SERVER['HTTP_HOST'], $_OPTIONS['mail'], "Заполнена форма обратной связи", $mail_text);
-  } else {
-  foreach ($errors as $error) {
-  ?>
-  <p style="color:red;"><? echo $error; ?></p>
-  <?
-  }
-  }
-  }
-
-  $_POST = fill_empty_array($_POST, Array(
-  "fio",
-  "info",
-  "text"
-  ));
-  ?>
-
-  <form method="post">
-  Ваше имя:<br>
-  <input name="fio" value="<? echo $_POST['fio'] ?>" style="width: 300px;"><br>
-
-  Обратный адрес или телефон:<br>
-  <input name="info" value="<? echo $_POST['info'] ?>" style="width: 300px;"><br>
-
-  Текст:<br>
-  <textarea name="text" style="width: 300px;"><? echo $_POST['text'] ?></textarea><br>
-
-  <input type="submit">
-  <input type="hidden" name="go" value="1">
-  </form>
- */?>

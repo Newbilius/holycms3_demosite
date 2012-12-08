@@ -6,9 +6,11 @@
         <td colspan=3>
             <table width="100%" border="1">
                 <tr align="center">
-                    Меню одноуровневое:<BR>
+                    РњРµРЅСЋ РѕРґРЅРѕСѓСЂРѕРІРЅРµРІРѕРµ:<BR>
                 <?
-                IncludeComponent("main_menu", "inner_table");
+                IncludeComponent("main_menu", "inner_table",Array(
+                    "cache"=>"auto",
+                ));
                 ?>
                 <BR>
                 <?= $_OPTIONS['slogan'] ?>
@@ -19,16 +21,18 @@
     </tr>
     <tr>
         <td valign="top" style="width:20%;">
-            Меню двухуровневое:<BR>
+            РњРµРЅСЋ РґРІСѓС…СѓСЂРѕРІРЅРµРІРѕРµ:<BR>
             <?
             IncludeComponent("main_menu", "ul_two_levels", Array(
                 "not_root" => true,
+                "cache"=>"auto",
             ));
             ?>
-            Меню полноуровневое:<BR>
+            РњРµРЅСЋ РїРѕР»РЅРѕСѓСЂРѕРІРЅРµРІРѕРµ:<BR>
             <?
             IncludeComponent("main_menu", "ul_all_levels", Array(
                 "not_root" => true,
+                "cache"=>"auto",
             ));
             ?>
         </td>

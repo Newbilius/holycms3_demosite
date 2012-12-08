@@ -12,6 +12,7 @@
 <script type="text/javascript" src="/engine/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="/engine/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="/engine/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="Тестовая RSS тестового сайта " href="/rss/" />
 <? PopUpImages();?>
 <?=$_OPTIONS['header_code']?>
 </head>

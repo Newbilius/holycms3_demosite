@@ -7,5 +7,6 @@ IncludeComponent("catalog20","",Array(
 		"url"=>"/photo/#id#",
 		"add_to_bread"=>"caption",
 		"set_title"=>"caption",
+                "inner_cache"=>"auto",
 ));
 ?>

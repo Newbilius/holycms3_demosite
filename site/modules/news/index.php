@@ -8,6 +8,7 @@ IncludeComponent("news20","",Array(
 		"url"=>"/news/#id#",
 		"add_to_bread"=>"caption",
 		"set_title"=>"caption",
+                "inner_cache"=>"auto",
 		//"draw_paginator"=>false,
 		//"paginator_template"=>"advance_stock"
 ));

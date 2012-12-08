@@ -13,8 +13,8 @@ else {
     if (isset($_POST['go'])) {
         $valid = new HolyValidator(Array(
                     "email" => "E-mail",
-                    "pass1" => "пароль",
-                    "pass2" => "повтор пароля",
+                    "pass1" => "РїР°СЂРѕР»СЊ",
+                    "pass2" => "РїРѕРІС‚РѕСЂ РїР°СЂРѕР»СЏ",
                 ));
 
         $valid->AddRule("not_empty", 'email')
@@ -56,9 +56,9 @@ else {
         E-mail:<br>
         <input name="email" value="<? echo $_POST['email'] ?>" style="width: 300px;"><br>
 
-        Пароль:<br>
+        РџР°СЂРѕР»СЊ:<br>
         <input type="password" name="pass1" value="<? echo $_POST['pass1'] ?>" style="width: 300px;"><br>
-        Повтор пароля:<br>
+        РџРѕРІС‚РѕСЂ РїР°СЂРѕР»СЏ:<br>
         <input type="password" name="pass2" value="<? echo $_POST['pass2'] ?>" style="width: 300px;"><br>
 
         <input type="hidden" name="go" value="1">

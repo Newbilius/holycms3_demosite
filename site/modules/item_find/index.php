@@ -5,21 +5,21 @@ $_GET = fill_empty_array($_GET, Array("cost_min","cost_max"));
 $_GET['cost_min']=intval($_GET['cost_min']);
 $_GET['cost_max']=intval($_GET['cost_max']);
 
-$filter = "folder=0";
+$filter[]=Array("folder","=","0");
 
 if ($_GET['cost_max']>0)
-    $filter.=" AND cost<=".$_GET['cost_max'];
+    $filter[]=Array("cost","<=",$_GET['cost_max']);
 if ($_GET['cost_min']>0)
-    $filter.=" AND cost>=".$_GET['cost_min'];
+    $filter[]=Array("cost",">=",$_GET['cost_min']);
 ?>
 
 <form method="get">
-    Цена, от
+    Р¦РµРЅР°, РѕС‚
     <input name="cost_min" value="<?echo $_GET['cost_min']?>">
-    Цена, до
+    Р¦РµРЅР°, РґРѕ
     <input name="cost_max" value="<?echo $_GET['cost_max']?>">
 
-    <input type="submit" value="Искать">
+    <input type="submit" value="РСЃРєР°С‚СЊ">
     
 </form>
 

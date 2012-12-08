@@ -5,9 +5,9 @@ $_POST = clear_array($_POST);
 
 if (isset($_POST['go'])) {
     $valid = new HolyValidator(Array(
-                "fio" => "Имя",
-                "info" => "обратный адрес или телефон",
-                "text" => "текст",
+                "fio" => "РРјСЏ",
+                "info" => "РѕР±СЂР°С‚РЅС‹Р№ Р°РґСЂРµСЃ РёР»Рё С‚РµР»РµС„РѕРЅ",
+                "text" => "С‚РµРєСЃС‚",
             ));
 
     $valid->AddRule("not_empty", 'fio')
@@ -19,18 +19,18 @@ if (isset($_POST['go'])) {
     $errors = $valid->Complete();
 
     if ($errors === true) {
-        echo "<p style='color:green'>сообщение отправлено успешно</p>";
+        echo "<p style='color:green'>СЃРѕРѕР±С‰РµРЅРёРµ РѕС‚РїСЂР°РІР»РµРЅРѕ СѓСЃРїРµС€РЅРѕ</p>";
         
         
-        $mail_text = "ФИО:" . $_POST["fio"] . "<BR>";
-        $mail_text.="Данные для связи:" . $_POST["info"] . "<BR>";
-        $mail_text.="Вопрос:<BR>" . $_POST["text"] . "<BR>";
+        $mail_text = "Р¤РРћ:" . $_POST["fio"] . "<BR>";
+        $mail_text.="Р”Р°РЅРЅС‹Рµ РґР»СЏ СЃРІСЏР·Рё:" . $_POST["info"] . "<BR>";
+        $mail_text.="Р’РѕРїСЂРѕСЃ:<BR>" . $_POST["text"] . "<BR>";
         global $_OPTIONS;
         
         unset($_POST);
         $_POST=array();
         
-        HolyMail("info@" . $_SERVER['HTTP_HOST'], $_OPTIONS['mail'], "Заполнена форма обратной связи", $mail_text);
+        HolyMail("info@" . $_SERVER['HTTP_HOST'], $_OPTIONS['mail'], "Р—Р°РїРѕР»РЅРµРЅР° С„РѕСЂРјР° РѕР±СЂР°С‚РЅРѕР№ СЃРІСЏР·Рё", $mail_text);
     } else {
         foreach ($errors as $error) {
             ?>
@@ -48,13 +48,13 @@ $_POST = fill_empty_array($_POST, Array(
 ?>
 
 <form method="post">
-    Ваше имя:<br>
+    Р’Р°С€Рµ РёРјСЏ:<br>
     <input name="fio" value="<? echo $_POST['fio'] ?>" style="width: 300px;"><br>
 
-    Обратный адрес или телефон:<br>
+    РћР±СЂР°С‚РЅС‹Р№ Р°РґСЂРµСЃ РёР»Рё С‚РµР»РµС„РѕРЅ:<br>
     <input name="info" value="<? echo $_POST['info'] ?>" style="width: 300px;"><br>
 
-    Текст:<br>
+    РўРµРєСЃС‚:<br>
     <textarea name="text" style="width: 300px;"><? echo $_POST['text'] ?></textarea><br> 
 
     <input type="submit">

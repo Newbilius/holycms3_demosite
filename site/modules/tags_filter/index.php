@@ -7,14 +7,13 @@ if (is_array($human_link))
 
 $_POST = clear_array($_POST);
 
-$filter="folder=0";
+$filter[]=Array("folder","=",0);
 
 $human_link= clear_array($human_link);
 if ($human_link)
 {
-    //$filter.=" AND tags like '%".$human_link."%'";
-    $filter.=" AND tags REGEXP '[[:<:]]".$human_link."[[:>:]]' = 1";
-    echo "<div>Ïîèñê ïî òıãó ".$human_link."</div><br>";
+    $filter[]=Array("AND","tags","REGEXP '[[:<:]]".$human_link."[[:>:]]'=",1);
+    echo "<div>ĞŸĞ¾Ğ¸ÑĞº Ğ¿Ğ¾ Ñ‚ÑĞ³Ñƒ ".$human_link."</div><br>";
 IncludeComponent("list_items","catalog",Array(
 		"table"=>"catalog",
 		"url"=>"/catalog/#id#",
@@ -23,5 +22,5 @@ IncludeComponent("list_items","catalog",Array(
 ));
 }
 else
-    echo "íå óêàçàí òıã";
+    echo "Ğ½Ğµ ÑƒĞºĞ°Ğ·Ğ°Ğ½ Ñ‚ÑĞ³";
 ?>

@@ -3,13 +3,13 @@
 </td>
 <td valign="top" width="200">
 
-    Поиск:<br>
+    РџРѕРёСЃРє:<br>
     <form action="/search/">
         <input type="text" name="find">
-        <input type="submit" value="Искать">
+        <input type="submit" value="РСЃРєР°С‚СЊ">
     </form>
     <br>
-    баннеры случайные:
+    Р±Р°РЅРЅРµСЂС‹ СЃР»СѓС‡Р°Р№РЅС‹Рµ:
     <br>
 
     <?
@@ -25,33 +25,29 @@
     IncludeComponent("cart_status", "", Array(
         "table" => "catalog",
         "cart_url" => "/cart/",
-        "cost_var" => "cost", //в какой переменной содержится цена
+        "cost_var" => "cost", //РІ РєР°РєРѕР№ РїРµСЂРµРјРµРЅРЅРѕР№ СЃРѕРґРµСЂР¶РёС‚СЃСЏ С†РµРЅР°
         "cookie_var" => "catalog_items",
             //"debug"=>false,
     ));
     ?>
     <br><br>
-    Тэги:<br>
-        <?
-    //тэги
-    $tags = new HolyTags("catalog", "tags", "/tags_filter/#tag#");
-
-    $cnt = 0;
-    $tags_list = $tags->GetFullList();
-    foreach ($tags_list as $tag) {
-        $cnt++;
-        ?>
-        <? if ($cnt != 1) { ?>,<? }; ?>
-        <a href="<? echo $tag['url'] ?>"><? echo $tag['caption'] ?> (<? echo $tag['count'] ?>)</a><?
-        ?>
-    <? }; ?>
+    РўСЌРіРё:<br>
+    <?
+    IncludeComponent("tags_list", "size", Array(
+        'table' => 'catalog',
+        'field'=>'tags',
+        'url'=>'/tags_filter/#tag#'
+        //"cache"=>"auto",
+    ));
+    ?>
         <br><br>
-        Полный каталог:<br>
+        РџРѕР»РЅС‹Р№ РєР°С‚Р°Р»РѕРі:<br>
        <?
     IncludeComponent("list_items", "catalog_folder_tree", Array(
         "table" => "catalog",
         "filter"=>"folder=1",
         "url"=>"/catalog/#id#",
+        "cache"=>"auto",
     ));
     ?> 
 </td>

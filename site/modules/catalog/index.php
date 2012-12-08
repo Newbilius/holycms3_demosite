@@ -28,16 +28,16 @@ if ($item01['id'])
 if ($item01['folder']==1){
 ?>
 <form>
-Сортировка по
+РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ
 <select name="by_what">
-    <option <? if ($_GET["by_what"]=="caption"){?>selected<?};?> value="caption">По имени</option>
-    <option <? if ($_GET["by_what"]=="cost"){?>selected<?};?> value="cost">По цене</option>
+    <option <? if ($_GET["by_what"]=="caption"){?>selected<?};?> value="caption">РџРѕ РёРјРµРЅРё</option>
+    <option <? if ($_GET["by_what"]=="cost"){?>selected<?};?> value="cost">РџРѕ С†РµРЅРµ</option>
 </select>
 <select name="how">
-    <option <? if ($_GET["how"]=="ASC"){?>selected<?};?> value="ASC">По возрастанию</option>
-    <option <? if ($_GET["how"]=="DESC"){?>selected<?};?> value="DESC">По убыванию</option>
+    <option <? if ($_GET["how"]=="ASC"){?>selected<?};?> value="ASC">РџРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ</option>
+    <option <? if ($_GET["how"]=="DESC"){?>selected<?};?> value="DESC">РџРѕ СѓР±С‹РІР°РЅРёСЋ</option>
 </select>
-<input type="submit" value="Поменять">
+<input type="submit" value="РџРѕРјРµРЅСЏС‚СЊ">
 </form>
 <br><br>
 <?
@@ -54,7 +54,8 @@ IncludeComponent("catalog20", "", Array(
     "add_to_bread" => "caption",
     "set_title" => "caption",
     "cart_url" => "/cart/?add=#id#",
-    //"debug"=>true,
     "order"=>$_GET["by_what"]." ".$_GET["how"],
+    "inner_cache"=>"auto",
+    
 ));
 ?>

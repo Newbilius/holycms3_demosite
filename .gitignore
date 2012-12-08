@@ -2,3 +2,5 @@
 /.quarantine
 /.tmb
 /upload/resize_cache
+/upload/cache
+/install
