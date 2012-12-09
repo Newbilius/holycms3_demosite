@@ -37,5 +37,13 @@
             ?>
         </td>
         <td valign="top">
-            <h1><? echo $_OPTIONS['page_title'] ?></h1>
-           <div><? IncludeComponent("nav_line","slash"); ?></div><br>
+            <h1>
+                <? IncludeComponent("page_title","",Array(
+               "cache"=>"auto",
+               "cache_key"=>$_SERVER['REQUEST_URI'],
+           )); ?>
+                </h1>
+           <div><? IncludeComponent("nav_line","slash",Array(
+               "cache"=>"auto",
+               "cache_key"=>$_SERVER['REQUEST_URI'],
+           )); ?></div><br>
