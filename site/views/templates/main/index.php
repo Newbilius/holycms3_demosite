@@ -47,10 +47,9 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
         <td valign="top">
             <h1>
                 <?
-                IncludeComponent("page_title", "", Array(
-                    "cache" => "auto",
-                    "cache_key" => $_SERVER['REQUEST_URI'],
-                ));
+                $title_c = Component::Factory("option_out")
+                        ->SetParam("param", "page_title")
+                        ->Execute();
                 ?>
             </h1>
             <div><?
