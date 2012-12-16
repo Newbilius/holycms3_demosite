@@ -96,12 +96,12 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
             <br><br>
             Тэги:<br>
             <?
-            IncludeComponent("tags_list", "size", Array(
-                'table' => 'catalog',
-                'field' => 'tags',
-                'url' => '/tags_filter/#tag#'
-                    //"cache"=>"auto",
-            ));
+            $tags_c = Component::Factory("tags_list")
+                    ->SetParam("template", "size")
+                    ->SetParam("table", "catalog")
+                    ->SetParam("field", "tags")
+                    ->SetParam("url", "/tags_filter/#tag#")
+                    ->Execute();
             ?>
             <br><br>
             Полный каталог:<br>
