@@ -76,11 +76,11 @@ if ($user->IsAuth()) {
     <br>
 
     <?
-}
-else
-    IncludeComponent("auth_user_form", "", Array(
-        "cabinet_url" => "/cabinet/"
-    ));
+} else {
+    Component::Factory("auth_user_form")
+            ->SetParam("cabinet_url", "/cabinet/")
+            ->Execute();
+};
 
 if (isset($_GET['exit'])) {
     $user->Logout();
