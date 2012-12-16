@@ -86,13 +86,13 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
             ?>
             <BR><br>
             <?
-            IncludeComponent("cart_status", "", Array(
-                "table" => "catalog",
-                "cart_url" => "/cart/",
-                "cost_var" => "cost", //в какой переменной содержится цена
-                "cookie_var" => "catalog_items",
-                    //"debug"=>false,
-            ));
+            $cart_status_c = Component::Factory("cart_status")
+                    ->SetParam("table", "catalog")
+                    ->SetParam("cart_url", "/cart/")
+                    ->SetParam("cost_var", "cost")
+                    ->SetParam("cookie_var", "catalog_items")
+            ;
+            $cart_status_c->Execute();
             ?>
             <br><br>
             Тэги:<br>
