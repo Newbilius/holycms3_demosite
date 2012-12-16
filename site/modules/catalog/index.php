@@ -45,17 +45,17 @@ if ($item01['folder']==1){
 ?>
 <div style="clear:both"></div>
 <?
-IncludeComponent("catalog20", "", Array(
-    "detail_template" => "catalog",
-    "items_template" => "catalog",
-    "folders_template" => "catalog_folders",
-    "table" => "catalog",
-    "url" => "/catalog/#id#",
-    "add_to_bread" => "caption",
-    "set_title" => "caption",
-    "cart_url" => "/cart/?add=#id#",
-    "order"=>$_GET["by_what"]." ".$_GET["how"],
-    "inner_cache"=>"auto",
-    
-));
+Component::Factory("catalog20")
+        ->SetParam("table", "catalog")
+        ->SetParam("url", "/catalog/#id#")
+        ->SetParam("cart_url", "/cart/?add=#id#")
+        ->SetParam("order", $_GET["by_what"]." ".$_GET["how"])
+        ->SetParam("detail_template", "catalog")
+        ->SetParam("items_template", "catalog")
+        ->SetParam("folders_template", "catalog_folders")
+        ->SetParam("add_to_bread", "caption")
+        ->SetParam("set_title", "caption")
+        ->SetParam("cache", "auto")
+        ->SetParam("debug", false)
+        ->Execute();
 ?>

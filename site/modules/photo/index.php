@@ -1,12 +1,14 @@
 <?
-IncludeComponent("catalog20","",Array(
-		"detail_template"=>"",
-		"items_template"=>"photo",
-		"folders_template"=>"photo_folders",
-		"table"=>"foto",
-		"url"=>"/photo/#id#",
-		"add_to_bread"=>"caption",
-		"set_title"=>"caption",
-                "inner_cache"=>"auto",
-));
+
+Component::Factory("catalog20")
+        ->SetParam("table", "foto")
+        ->SetParam("url", "/photo/#id#")
+        ->SetParam("detail_template", "")
+        ->SetParam("items_template", "photo")
+        ->SetParam("folders_template", "photo_folders")
+        ->SetParam("add_to_bread", "caption")
+        ->SetParam("set_title", "caption")
+        ->SetParam("cache", "auto")
+        ->SetParam("debug", false)
+        ->Execute();
 ?>
