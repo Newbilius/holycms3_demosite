@@ -13,6 +13,6 @@ $_top_menu[] = Array(
 
 $_photo_id="foto";
 $_folder_selector=true;
-$_CONFIG['CACHE_SYSTEM']=true;
+$_CONFIG['CACHE_SYSTEM']=false;
 $_CONFIG['CACHE_MODE']="files";
 ?>
