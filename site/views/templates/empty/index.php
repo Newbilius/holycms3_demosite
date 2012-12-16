@@ -5,5 +5,4 @@ $valine_c = Component::Factory("nav_line")
         ->SetParam("cache", "auto")
         ->Execute();
 ?></div><br>
-<?=
-$CONTENT?>
+<?=$CONTENT?>
