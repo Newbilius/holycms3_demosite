@@ -1,15 +1,14 @@
 <?
-IncludeComponent("news20","",Array(
-		"detail_template"=>"news",
-		"list_template"=>"news",
-		//"order"=>"item_date",
-		"table"=>"news",
-		//"count"=>9999,
-		"url"=>"/news/#id#",
-		"add_to_bread"=>"caption",
-		"set_title"=>"caption",
-                "inner_cache"=>"auto",
-		//"draw_paginator"=>false,
-		//"paginator_template"=>"advance_stock"
-));
+
+Component::Factory("news20")
+        ->SetParam("table", "news")
+        ->SetParam("url", "/news/#id#")
+        ->SetParam("back_url", "/news/")
+        ->SetParam("detail_template", "news")
+        ->SetParam("list_template", "news")
+        ->SetParam("add_to_bread", "caption")
+        ->SetParam("set_title", "caption")
+        ->SetParam("cache", "auto")
+        ->SetParam("debug", true)
+        ->Execute();
 ?>
