@@ -9,7 +9,6 @@ Component::Factory("cart20")
         ->SetParam("table", "catalog")
         ->SetParam("item_url", "/catalog/#id#")
         ->SetParam("cost_var", "cost")
-        
         ->SetParam("cookie_var", "catalog_items")
         ->SetParam("list_items_template", "cart_list")
         ->SetParam("form_template", "default")
