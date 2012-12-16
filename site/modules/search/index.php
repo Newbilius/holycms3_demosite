@@ -19,10 +19,10 @@ $array_of_data = array(
     ),
 );
 
-
-IncludeComponent("search", "", Array(
-    "find_text" => $_GET['find'],
-    "area" => $array_of_data,
-    "url"=>"/search/",
-));
+$search_c = Component::Factory("search")
+        ->SetParam("find_text",$_GET['find'])
+        ->SetParam("url", "/search/")
+        ->SetParam("area", $array_of_data)
+;
+$search_c->Execute();
 ?>
