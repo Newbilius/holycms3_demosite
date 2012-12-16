@@ -9,20 +9,13 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
                 <tr align="center">
                     Меню одноуровневое:<BR>
                 <?
-                /*
-                  $menu_c = Component::Factory("main_menu")
-                  ->SetParam("template", "inner_table")
-                  ->SetParam("cache", false)
-                  ;
-                  $menu_c->Execute();
-                 */
+                $menu_c = Component::Factory("main_menu")
+                        ->SetParam("template", "inner_table")
+                        ->SetParam("cache", "auto")
+                ;
+                $menu_c->Execute();
                 ?>
 
-                <?
-                IncludeComponent("main_menu", "inner_table", Array(
-                    "cache" => "auto",
-                ));
-                ?>
                 <BR>
                 <?= $_OPTIONS['slogan'] ?>
                 <?= $_OPTIONS['phones_top'] ?>
@@ -34,17 +27,21 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
         <td valign="top" style="width:20%;">
             Меню двухуровневое:<BR>
             <?
-            IncludeComponent("main_menu", "ul_two_levels", Array(
-                "not_root" => true,
-                "cache" => "auto",
-            ));
+            $menu_c = Component::Factory("main_menu")
+                    ->SetParam("template", "ul_two_levels")
+                    ->SetParam("cache", "auto")
+                    ->SetParam("filter", Array("not_visible" => 0, "in_menu" => 1))
+            ;
+            $menu_c->Execute();
             ?>
             Меню полноуровневое:<BR>
             <?
-            IncludeComponent("main_menu", "ul_all_levels", Array(
-                "not_root" => true,
-                "cache" => "auto",
-            ));
+            $menu_c = Component::Factory("main_menu")
+                    ->SetParam("template", "ul_all_levels")
+                    ->SetParam("cache", "auto")
+                    ->SetParam("filter", Array("not_visible" => 0, "in_menu" => 1))
+            ;
+            $menu_c->Execute();
             ?>
         </td>
         <td valign="top">
@@ -63,7 +60,7 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
                 ));
                 ?></div><br>
 
-<?= $CONTENT ?>
+            <?= $CONTENT ?>
 
         </td>
         <td valign="top" width="200">
@@ -125,7 +122,7 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
     <tr>
 
         <td colspan="3">
-<?= $_OPTIONS['footer_code'] ?>
+            <?= $_OPTIONS['footer_code'] ?>
         </td>
     </tr>
 </table>
