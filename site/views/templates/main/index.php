@@ -54,10 +54,10 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
                 ?>
             </h1>
             <div><?
-                IncludeComponent("nav_line", "slash", Array(
-                    "cache" => "auto",
-                    "cache_key" => $_SERVER['REQUEST_URI'],
-                ));
+                $valine_c = Component::Factory("nav_line")
+                        ->SetParam("template", "slash")
+                        ->SetParam("cache", "auto")
+                        ->Execute();
                 ?></div><br>
 
             <?= $CONTENT ?>
