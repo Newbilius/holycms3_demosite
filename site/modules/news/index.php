@@ -9,6 +9,6 @@ Component::Factory("news20")
         ->SetParam("add_to_bread", "caption")
         ->SetParam("set_title", "caption")
         ->SetParam("cache", "auto")
-        ->SetParam("debug", true)
+        ->SetParam("debug", false)
         ->Execute();
 ?>
