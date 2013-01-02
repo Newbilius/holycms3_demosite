@@ -1,7 +1,7 @@
 <?
 $_GET = clear_array($_GET);
 
-$_GET = fill_empty_array($_GET, Array("cost_min", "cost_max"));
+$_GET = fill_empty_array($_GET, Array("cost_min", "cost_max","PAGE"));
 $_GET['cost_min'] = intval($_GET['cost_min']);
 $_GET['cost_max'] = intval($_GET['cost_max']);
 
@@ -33,6 +33,11 @@ $catalog_c = Component::Factory("list_items")
         ->SetParam("cache", "auto")
         ->SetParam("filter", $filter)
         ->SetParam("cart_url", "/cart/?add=#id#")
+        
+        ->SetParam("draw_paginator", true)
+        ->SetParam("paginator_url", "/item_find/?PAGE=#PAGE#&cost_min=".$_GET['cost_min']."&cost_max=".$_GET['cost_max'])
+        ->SetParam("page", intval($_GET['PAGE']))
+        ->SetParam("count", 3)
 ;
 $catalog_c->Execute();
 ?>
