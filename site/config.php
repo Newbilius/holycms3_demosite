@@ -7,5 +7,6 @@ $_CONFIG["SERVER"]="localhost";
 $_CONFIG["LOGIN"]="root";
 $_CONFIG["PASS"]="";
 $_CONFIG["BASE"]="demo_site";
-
+$_CONFIG['CACHE_SYSTEM']=false;
+$_CONFIG['CACHE_MODE']="files";
 ?>

@@ -1,18 +1,7 @@
 <?php
-$_top_menu[] = Array(
-    "caption" => "-",
-    "parent" => "utilits",
-);
+IncludeAddon("photo_album");
 
-$_top_menu[] = Array(
-    "url" => "/engine/admin/photo_add.php",
-    "caption" => "Загрузка фото в альбом",
-    "admin_right" => false,
-    "parent" => "utilits",
-);
-
-$_photo_id="foto";
-$_folder_selector=true;
-$_CONFIG['CACHE_SYSTEM']=false;
-$_CONFIG['CACHE_MODE']="files";
+global $photo_album_config;
+$photo_album_config['id']="foto";
+$photo_album_config['folder_selector']="foto";
 ?>
