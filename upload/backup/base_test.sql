@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 17, 2013 at 07:56 PM
+-- Generation Time: Jan 17, 2013 at 09:02 PM
 -- Server version: 5.1.40
 -- PHP Version: 5.3.13
 
@@ -191,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `journal` (
   `date_time` datetime NOT NULL,
   `data_caption` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
 
 --
 -- Dumping data for table `journal`
@@ -237,7 +237,8 @@ INSERT INTO `journal` (`id`, `name`, `caption`, `sort`, `parent`, `folder`, `use
 (37, 'c04db9734c48598cec23d3794aa15a4f', '1358437983', 3700, 0, 0, '1', 'modules', 17, 'add', 'YTo2OntzOjI6ImlkIjtzOjI6IjE3IjtzOjQ6Im5hbWUiO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NzoiY2FwdGlvbiI7czoxMzoiYWpheF9jYXJ0X2FkZCI7czo0OiJzb3J0IjtzOjQ6IjE3MDAiO3M6NjoicGFyZW50IjtzOjE6IjAiO3M6NjoiZm9sZGVyIjtzOjE6IjAiO30=', '', '2013-01-17 19:53:03', 'ajax_cart_add'),
 (38, '66b84251b670479c7989c07c2add468c', '1358437988', 3800, 0, 0, '1', 'modules', 17, 'update', 'YTo2OntzOjI6ImlkIjtzOjI6IjE3IjtzOjQ6Im5hbWUiO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NzoiY2FwdGlvbiI7czoxMzoiYWpheF9jYXJ0X2FkZCI7czo0OiJzb3J0IjtzOjQ6IjE3MDAiO3M6NjoicGFyZW50IjtzOjE6IjAiO3M6NjoiZm9sZGVyIjtzOjE6IjAiO30=', 'YTo2OntzOjI6ImlkIjtzOjI6IjE3IjtzOjQ6Im5hbWUiO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NzoiY2FwdGlvbiI7czoxMzoiYWpheF9jYXJ0X2FkZCI7czo0OiJzb3J0IjtzOjQ6IjE3MDAiO3M6NjoicGFyZW50IjtzOjE6IjAiO3M6NjoiZm9sZGVyIjtzOjE6IjAiO30=', '2013-01-17 19:53:08', 'ajax_cart_add'),
 (39, '937387016336c7cc4edac631c268333a', '1358438004', 3900, 0, 0, '1', 'pages', 38, 'add', 'YToxNzp7czoyOiJpZCI7czoyOiIzOCI7czo0OiJuYW1lIjtzOjE2OiJhamF4X2NhcnRfc3RhdHVzIjtzOjc6ImNhcHRpb24iO3M6MTY6ImFqYXhfY2FydF9zdGF0dXMiO3M6NDoic29ydCI7czo0OiIyNzAwIjtzOjY6InBhcmVudCI7czoyOiIzNyI7czo2OiJmb2xkZXIiO3M6MToiMCI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNSI7czoxMToiZGV0YWlsX3RleHQiO3M6MDoiIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjE2OiJhamF4X2NhcnRfc3RhdHVzIjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', '', '2013-01-17 19:53:24', 'ajax_cart_status'),
-(40, 'd3c57d287b5371236269d3f20eeb34c8', '1358438014', 4000, 0, 0, '1', 'pages', 39, 'add', 'YToxNzp7czoyOiJpZCI7czoyOiIzOSI7czo0OiJuYW1lIjtzOjEzOiJhamF4X2NhcnRfYWRkIjtzOjc6ImNhcHRpb24iO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NDoic29ydCI7czo0OiIyODAwIjtzOjY6InBhcmVudCI7czoyOiIzNyI7czo2OiJmb2xkZXIiO3M6MToiMCI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNSI7czoxMToiZGV0YWlsX3RleHQiO3M6MDoiIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjEzOiJhamF4X2NhcnRfYWRkIjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', '', '2013-01-17 19:53:34', 'ajax_cart_add');
+(40, 'd3c57d287b5371236269d3f20eeb34c8', '1358438014', 4000, 0, 0, '1', 'pages', 39, 'add', 'YToxNzp7czoyOiJpZCI7czoyOiIzOSI7czo0OiJuYW1lIjtzOjEzOiJhamF4X2NhcnRfYWRkIjtzOjc6ImNhcHRpb24iO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NDoic29ydCI7czo0OiIyODAwIjtzOjY6InBhcmVudCI7czoyOiIzNyI7czo2OiJmb2xkZXIiO3M6MToiMCI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNSI7czoxMToiZGV0YWlsX3RleHQiO3M6MDoiIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjEzOiJhamF4X2NhcnRfYWRkIjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', '', '2013-01-17 19:53:34', 'ajax_cart_add'),
+(41, '0de0ba28ee94b2cede1c5b133b6364b4', '1358440470', 4100, 0, 0, '1', 'news_files', 1, 'update', 'YTo4OntzOjI6ImlkIjtzOjE6IjEiO3M6NDoibmFtZSI7czoyOToiY2hhbmdlbG9nX29kbm95X2l6X3ZlcnNpeV9jbXMiO3M6NzoiY2FwdGlvbiI7czo0MjoiQ2hhbmdlbG9nINC+0LTQvdC+0Lkg0LjQtyDQstC10YDRgdC40LkgQ01TIjtzOjQ6InNvcnQiO3M6MzoiMTAwIjtzOjY6InBhcmVudCI7czoxOiIwIjtzOjY6ImZvbGRlciI7czoxOiIwIjtzOjQ6ImZpbGUiO3M6NTY6Ii91cGxvYWQvZmlsZXMvNzIvNWQvNzI1ZDIyZmNiZDc4Y2UzNmI3NWFkYzFkMTA5ZDZmMTIudHh0IjtzOjc6Im5ld3NfaWQiO3M6MjoiNTMiO30=', 'YTo4OntzOjI6ImlkIjtzOjE6IjEiO3M6NDoibmFtZSI7czoyOToiY2hhbmdlbG9nX29kbm95X2l6X3ZlcnNpeV9jbXMiO3M6NzoiY2FwdGlvbiI7czo0MjoiQ2hhbmdlbG9nINC+0LTQvdC+0Lkg0LjQtyDQstC10YDRgdC40LkgQ01TIjtzOjQ6InNvcnQiO3M6MzoiMTAwIjtzOjY6InBhcmVudCI7czoxOiIwIjtzOjY6ImZvbGRlciI7czoxOiIwIjtzOjQ6ImZpbGUiO3M6MDoiIjtzOjc6Im5ld3NfaWQiO3M6MjoiNTMiO30=', '2013-01-17 20:34:30', 'Changelog одной из версий CMS');
 
 -- --------------------------------------------------------
 
@@ -332,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `news_files` (
 --
 
 INSERT INTO `news_files` (`id`, `name`, `caption`, `sort`, `parent`, `folder`, `file`, `news_id`) VALUES
-(1, 'changelog_odnoy_iz_versiy_cms', 'Changelog одной из версий CMS', 100, 0, 0, '', '53'),
+(1, 'changelog_odnoy_iz_versiy_cms', 'Changelog одной из версий CMS', 100, 0, 0, '/upload/files/72/5d/725d22fcbd78ce36b75adc1d109d6f12.txt', '53'),
 (3, '1111', '1111', 300, 0, 0, '', '54'),
 (2, 'malen_kaya_koalla', 'Маленькая коалла', 200, 0, 0, '/upload/files/eb/45/eb45425c3ad46cb45ea4c101fdb0b4de.jpg', '53');
 
