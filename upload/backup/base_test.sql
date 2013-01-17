@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 12, 2013 at 12:37 PM
+-- Generation Time: Jan 17, 2013 at 07:56 PM
 -- Server version: 5.1.40
 -- PHP Version: 5.3.13
 
@@ -110,14 +110,15 @@ CREATE TABLE IF NOT EXISTS `cms_options` (
   `opt_by` text CHARACTER SET latin1 NOT NULL,
   `opt_count` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `cms_options`
 --
 
 INSERT INTO `cms_options` (`id`, `name`, `caption`, `sort`, `parent`, `folder`, `opt_block`, `opt_sort`, `opt_by`, `opt_count`) VALUES
-(1, 'journal', 'journal', 100, 0, 0, 'journal', 'date_time', 'DESC', 10);
+(1, 'journal', 'journal', 100, 0, 0, 'journal', 'date_time', 'DESC', 10),
+(2, 'modules', 'modules', 200, 0, 0, 'modules', 'sort', 'ASC', 20);
 
 -- --------------------------------------------------------
 
@@ -190,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `journal` (
   `date_time` datetime NOT NULL,
   `data_caption` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `journal`
@@ -227,7 +228,16 @@ INSERT INTO `journal` (`id`, `name`, `caption`, `sort`, `parent`, `folder`, `use
 (28, 'bcb0e104fb5a3e1b677c34d829a4805d', '1357212670', 2800, 0, 0, '1', 'foto', 63, 'delete', 'YTo3OntzOjI6ImlkIjtzOjI6IjYzIjtzOjQ6Im5hbWUiO3M6MzI6IjY2OTJhZDU4ZDY3NjE3OGM3NmQ1MWMyZWNmMWIwNzQxIjtzOjc6ImNhcHRpb24iO3M6MTA6IlR1bGlwcy5qcGciO3M6NDoic29ydCI7czo0OiIzMDAwIjtzOjY6InBhcmVudCI7czoyOiI1MiI7czo2OiJmb2xkZXIiO3M6MToiMCI7czo0OiJmb3RvIjtzOjU1OiIvdXBsb2FkL3BpY3MvNWMvNDQvNWM0NDhiMGQ1MzdiYTViY2YwNTFlOTliMWMxN2U0ODQuanBnIjt9', '', '2013-01-03 15:31:10', 'Tulips.jpg'),
 (29, 'b58af95f40f0c81101e7e28bf02b0f85', '1357212689', 2900, 0, 0, '1', 'foto', 52, 'delete', 'YTo3OntzOjI6ImlkIjtzOjI6IjUyIjtzOjQ6Im5hbWUiO3M6NzoidGVzdGluZyI7czo3OiJjYXB0aW9uIjtzOjE0OiLQotC10YHRgtC40L3QsyI7czo0OiJzb3J0IjtzOjQ6IjI3MDAiO3M6NjoicGFyZW50IjtzOjE6IjAiO3M6NjoiZm9sZGVyIjtzOjE6IjEiO3M6NDoiZm90byI7czo1NToiL3VwbG9hZC9waWNzLzk4L2Y3Lzk4ZjdmMWM4ZmZjYzc0ZWZjZmFmMTM1Mzk3NTMxMTQxLmpwZyI7fQ==', '', '2013-01-03 15:31:29', 'Тестинг'),
 (30, '3e147f3522672cb0182f2b4cd66bc949', '1357979737', 3000, 0, 0, '1', 'foto', 27, 'update', 'YTo3OntzOjI6ImlkIjtzOjI6IjI3IjtzOjQ6Im5hbWUiO3M6NDc6ImtpdGF5c2tpeV9wbGFuc2hldF9fbnluZV8tX25hdmlnYXRvcl9uZV91X21lbnlhIjtzOjc6ImNhcHRpb24iO3M6ODE6ItCa0LjRgtCw0LnRgdC60LjQuSDQv9C70LDQvdGI0LXRgiwg0L3Ri9C90LUgLSDQvdCw0LLQuNCz0LDRgtC+0YAg0L3QtSDRgyDQvNC10L3RjyI7czo0OiJzb3J0IjtzOjM6IjIwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo0OiJmb3RvIjtzOjA6IiI7fQ==', 'YTo3OntzOjI6ImlkIjtzOjI6IjI3IjtzOjQ6Im5hbWUiO3M6NDc6ImtpdGF5c2tpeV9wbGFuc2hldF9fbnluZV8tX25hdmlnYXRvcl9uZV91X21lbnlhIjtzOjc6ImNhcHRpb24iO3M6ODE6ItCa0LjRgtCw0LnRgdC60LjQuSDQv9C70LDQvdGI0LXRgiwg0L3Ri9C90LUgLSDQvdCw0LLQuNCz0LDRgtC+0YAg0L3QtSDRgyDQvNC10L3RjyI7czo0OiJzb3J0IjtzOjM6IjIwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo0OiJmb3RvIjtzOjU1OiIvdXBsb2FkL3BpY3MvNDYvYzUvNDZjNWNkY2NkZjZhZjE1ZjcwNWJmYWNiNTBmYTE1NTIuanBnIjt9', '2013-01-12 12:35:37', 'Китайский планшет, ныне - навигатор не у меня'),
-(31, '47f83209a7437d6dd6db858b14e99e3a', '1357979748', 3100, 0, 0, '1', 'foto', 27, 'update', 'YTo3OntzOjI6ImlkIjtzOjI6IjI3IjtzOjQ6Im5hbWUiO3M6NDc6ImtpdGF5c2tpeV9wbGFuc2hldF9fbnluZV8tX25hdmlnYXRvcl9uZV91X21lbnlhIjtzOjc6ImNhcHRpb24iO3M6ODE6ItCa0LjRgtCw0LnRgdC60LjQuSDQv9C70LDQvdGI0LXRgiwg0L3Ri9C90LUgLSDQvdCw0LLQuNCz0LDRgtC+0YAg0L3QtSDRgyDQvNC10L3RjyI7czo0OiJzb3J0IjtzOjM6IjIwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo0OiJmb3RvIjtzOjU1OiIvdXBsb2FkL3BpY3MvM2UvOTMvM2U5M2FmZjAwMjBhNWZhZTEzZDRiZWY4ZGU1ZDA0YTcuanBnIjt9', 'YTo3OntzOjI6ImlkIjtzOjI6IjI3IjtzOjQ6Im5hbWUiO3M6NDc6ImtpdGF5c2tpeV9wbGFuc2hldF9fbnluZV8tX25hdmlnYXRvcl9uZV91X21lbnlhIjtzOjc6ImNhcHRpb24iO3M6ODE6ItCa0LjRgtCw0LnRgdC60LjQuSDQv9C70LDQvdGI0LXRgiwg0L3Ri9C90LUgLSDQvdCw0LLQuNCz0LDRgtC+0YAg0L3QtSDRgyDQvNC10L3RjyI7czo0OiJzb3J0IjtzOjM6IjIwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo0OiJmb3RvIjtzOjA6IiI7fQ==', '2013-01-12 12:35:48', 'Китайский планшет, ныне - навигатор не у меня');
+(31, '47f83209a7437d6dd6db858b14e99e3a', '1357979748', 3100, 0, 0, '1', 'foto', 27, 'update', 'YTo3OntzOjI6ImlkIjtzOjI6IjI3IjtzOjQ6Im5hbWUiO3M6NDc6ImtpdGF5c2tpeV9wbGFuc2hldF9fbnluZV8tX25hdmlnYXRvcl9uZV91X21lbnlhIjtzOjc6ImNhcHRpb24iO3M6ODE6ItCa0LjRgtCw0LnRgdC60LjQuSDQv9C70LDQvdGI0LXRgiwg0L3Ri9C90LUgLSDQvdCw0LLQuNCz0LDRgtC+0YAg0L3QtSDRgyDQvNC10L3RjyI7czo0OiJzb3J0IjtzOjM6IjIwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo0OiJmb3RvIjtzOjU1OiIvdXBsb2FkL3BpY3MvM2UvOTMvM2U5M2FmZjAwMjBhNWZhZTEzZDRiZWY4ZGU1ZDA0YTcuanBnIjt9', 'YTo3OntzOjI6ImlkIjtzOjI6IjI3IjtzOjQ6Im5hbWUiO3M6NDc6ImtpdGF5c2tpeV9wbGFuc2hldF9fbnluZV8tX25hdmlnYXRvcl9uZV91X21lbnlhIjtzOjc6ImNhcHRpb24iO3M6ODE6ItCa0LjRgtCw0LnRgdC60LjQuSDQv9C70LDQvdGI0LXRgiwg0L3Ri9C90LUgLSDQvdCw0LLQuNCz0LDRgtC+0YAg0L3QtSDRgyDQvNC10L3RjyI7czo0OiJzb3J0IjtzOjM6IjIwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo0OiJmb3RvIjtzOjA6IiI7fQ==', '2013-01-12 12:35:48', 'Китайский планшет, ныне - навигатор не у меня'),
+(32, '9172cad9e5773f5fc6cf0523fa3b3c76', '1358437889', 3200, 0, 1, '1', 'pages', 0, 'add', 'YTowOnt9', '', '2013-01-17 19:51:29', ''),
+(33, 'fdbd8a47663b82f8d1f01effae1c635a', '1358437907', 3300, 0, 0, '1', 'pages', 37, 'update', 'YToxNzp7czoyOiJpZCI7czoyOiIzNyI7czo0OiJuYW1lIjtzOjQ6ImFqYXgiO3M6NzoiY2FwdGlvbiI7czo0OiJhamF4IjtzOjQ6InNvcnQiO3M6NDoiMjYwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNiI7czoxMToiZGV0YWlsX3RleHQiO3M6MTQ6IjxwPg0KCTExPC9wPg0KIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjU6ImVtcHR5IjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', 'YToxNzp7czoyOiJpZCI7czoyOiIzNyI7czo0OiJuYW1lIjtzOjQ6ImFqYXgiO3M6NzoiY2FwdGlvbiI7czo0OiJhamF4IjtzOjQ6InNvcnQiO3M6NDoiMjYwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNiI7czoxMToiZGV0YWlsX3RleHQiO3M6MDoiIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjU6ImVtcHR5IjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', '2013-01-17 19:51:47', 'ajax'),
+(34, 'be1b0b1a888169d563e9ced1c2339ed7', '1358437924', 3400, 0, 0, '1', 'pages', 37, 'update', 'YToxNzp7czoyOiJpZCI7czoyOiIzNyI7czo0OiJuYW1lIjtzOjQ6ImFqYXgiO3M6NzoiY2FwdGlvbiI7czo0OiJhamF4IjtzOjQ6InNvcnQiO3M6NDoiMjYwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNiI7czoxMToiZGV0YWlsX3RleHQiO3M6MDoiIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjU6ImVtcHR5IjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', 'YToxNzp7czoyOiJpZCI7czoyOiIzNyI7czo0OiJuYW1lIjtzOjQ6ImFqYXgiO3M6NzoiY2FwdGlvbiI7czo0OiJhamF4IjtzOjQ6InNvcnQiO3M6NDoiMjYwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMSI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNiI7czoxMToiZGV0YWlsX3RleHQiO3M6MTQ6IjxwPg0KCTExPC9wPg0KIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjU6ImVtcHR5IjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', '2013-01-17 19:52:04', 'ajax'),
+(35, 'b9b8944255814bb8bd4e7b065a1dd05a', '1358437962', 3500, 0, 0, '1', 'modules', 16, 'add', 'YTo2OntzOjI6ImlkIjtzOjI6IjE2IjtzOjQ6Im5hbWUiO3M6MTE6ImNhcnRfc3RhdHVzIjtzOjc6ImNhcHRpb24iO3M6MTE6ImNhcnRfc3RhdHVzIjtzOjQ6InNvcnQiO3M6NDoiMTYwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMCI7fQ==', '', '2013-01-17 19:52:42', 'cart_status'),
+(36, '67476a09d45e1b7909ec7f150108b721', '1358437977', 3600, 0, 0, '1', 'modules', 16, 'update', 'YTo2OntzOjI6ImlkIjtzOjI6IjE2IjtzOjQ6Im5hbWUiO3M6MTY6ImFqYXhfY2FydF9zdGF0dXMiO3M6NzoiY2FwdGlvbiI7czoxNjoiYWpheF9jYXJ0X3N0YXR1cyI7czo0OiJzb3J0IjtzOjQ6IjE2MDAiO3M6NjoicGFyZW50IjtzOjE6IjAiO3M6NjoiZm9sZGVyIjtzOjE6IjAiO30=', 'YTo2OntzOjI6ImlkIjtzOjI6IjE2IjtzOjQ6Im5hbWUiO3M6MTE6ImNhcnRfc3RhdHVzIjtzOjc6ImNhcHRpb24iO3M6MTE6ImNhcnRfc3RhdHVzIjtzOjQ6InNvcnQiO3M6NDoiMTYwMCI7czo2OiJwYXJlbnQiO3M6MToiMCI7czo2OiJmb2xkZXIiO3M6MToiMCI7fQ==', '2013-01-17 19:52:57', 'ajax_cart_status'),
+(37, 'c04db9734c48598cec23d3794aa15a4f', '1358437983', 3700, 0, 0, '1', 'modules', 17, 'add', 'YTo2OntzOjI6ImlkIjtzOjI6IjE3IjtzOjQ6Im5hbWUiO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NzoiY2FwdGlvbiI7czoxMzoiYWpheF9jYXJ0X2FkZCI7czo0OiJzb3J0IjtzOjQ6IjE3MDAiO3M6NjoicGFyZW50IjtzOjE6IjAiO3M6NjoiZm9sZGVyIjtzOjE6IjAiO30=', '', '2013-01-17 19:53:03', 'ajax_cart_add'),
+(38, '66b84251b670479c7989c07c2add468c', '1358437988', 3800, 0, 0, '1', 'modules', 17, 'update', 'YTo2OntzOjI6ImlkIjtzOjI6IjE3IjtzOjQ6Im5hbWUiO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NzoiY2FwdGlvbiI7czoxMzoiYWpheF9jYXJ0X2FkZCI7czo0OiJzb3J0IjtzOjQ6IjE3MDAiO3M6NjoicGFyZW50IjtzOjE6IjAiO3M6NjoiZm9sZGVyIjtzOjE6IjAiO30=', 'YTo2OntzOjI6ImlkIjtzOjI6IjE3IjtzOjQ6Im5hbWUiO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NzoiY2FwdGlvbiI7czoxMzoiYWpheF9jYXJ0X2FkZCI7czo0OiJzb3J0IjtzOjQ6IjE3MDAiO3M6NjoicGFyZW50IjtzOjE6IjAiO3M6NjoiZm9sZGVyIjtzOjE6IjAiO30=', '2013-01-17 19:53:08', 'ajax_cart_add'),
+(39, '937387016336c7cc4edac631c268333a', '1358438004', 3900, 0, 0, '1', 'pages', 38, 'add', 'YToxNzp7czoyOiJpZCI7czoyOiIzOCI7czo0OiJuYW1lIjtzOjE2OiJhamF4X2NhcnRfc3RhdHVzIjtzOjc6ImNhcHRpb24iO3M6MTY6ImFqYXhfY2FydF9zdGF0dXMiO3M6NDoic29ydCI7czo0OiIyNzAwIjtzOjY6InBhcmVudCI7czoyOiIzNyI7czo2OiJmb2xkZXIiO3M6MToiMCI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNSI7czoxMToiZGV0YWlsX3RleHQiO3M6MDoiIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjE2OiJhamF4X2NhcnRfc3RhdHVzIjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', '', '2013-01-17 19:53:24', 'ajax_cart_status'),
+(40, 'd3c57d287b5371236269d3f20eeb34c8', '1358438014', 4000, 0, 0, '1', 'pages', 39, 'add', 'YToxNzp7czoyOiJpZCI7czoyOiIzOSI7czo0OiJuYW1lIjtzOjEzOiJhamF4X2NhcnRfYWRkIjtzOjc6ImNhcHRpb24iO3M6MTM6ImFqYXhfY2FydF9hZGQiO3M6NDoic29ydCI7czo0OiIyODAwIjtzOjY6InBhcmVudCI7czoyOiIzNyI7czo2OiJmb2xkZXIiO3M6MToiMCI7czo4OiJrZXl3b3JkcyI7czowOiIiO3M6ODoidGVtcGxhdGUiO3M6MToiNSI7czoxMToiZGV0YWlsX3RleHQiO3M6MDoiIjtzOjc6ImluX21lbnUiO3M6MToiMCI7czo5OiJodW1hbl91cmwiO3M6MToiMCI7czoxMToibm90X3Zpc2libGUiO3M6MToiMCI7czo3OiJtb2R1bGVzIjtzOjEzOiJhamF4X2NhcnRfYWRkIjtzOjEyOiJub3RfaW5fYnJlYWQiO3M6MToiMCI7czo4OiJjYXB0aW9uMiI7czowOiIiO3M6MTE6ImRlc2NyaXB0aW9uIjtzOjA6IiI7czo4OiJyZWRpcmVjdCI7czowOiIiO30=', '', '2013-01-17 19:53:34', 'ajax_cart_add');
 
 -- --------------------------------------------------------
 
@@ -243,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `modules` (
   `parent` int(11) NOT NULL,
   `folder` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `modules`
@@ -264,7 +274,9 @@ INSERT INTO `modules` (`id`, `name`, `caption`, `sort`, `parent`, `folder`) VALU
 (12, 'tags_filter', 'Фильтр по тэгам', 1200, 0, 0),
 (13, 'search', 'Поиск', 1300, 0, 0),
 (14, 'item_find', 'Фильтр по каталогу', 1400, 0, 0),
-(15, 'rss', 'RSS', 1500, 0, 0);
+(15, 'rss', 'RSS', 1500, 0, 0),
+(16, 'ajax_cart_status', 'ajax_cart_status', 1600, 0, 0),
+(17, 'ajax_cart_add', 'ajax_cart_add', 1700, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -414,7 +426,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `description` text CHARACTER SET cp1251 NOT NULL,
   `redirect` text CHARACTER SET cp1251 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Dumping data for table `pages`
@@ -441,7 +453,10 @@ INSERT INTO `pages` (`id`, `name`, `caption`, `sort`, `parent`, `folder`, `keywo
 (33, 'stranica', 'страница', 2200, 30, 0, '', 0, '', 0, 0, 0, 'empty', 0, '', '', ''),
 (34, 'search', 'Поиск', 2300, 0, 1, '', 0, '', 0, 0, 0, 'search', 0, '', '', ''),
 (35, 'item_find', 'Поиск по каталогу', 2400, 0, 1, '', 0, '', 1, 0, 0, 'item_find', 0, '', '', ''),
-(36, 'rss', 'RSS', 2500, 0, 1, '', 6, '', 0, 0, 0, 'rss', 0, '', '', '');
+(36, 'rss', 'RSS', 2500, 0, 1, '', 6, '', 0, 0, 0, 'rss', 0, '', '', ''),
+(37, 'ajax', 'ajax', 2600, 0, 1, '', 6, '', 0, 0, 0, 'empty', 0, '', '', ''),
+(38, 'ajax_cart_status', 'ajax_cart_status', 2700, 37, 0, '', 5, '', 0, 0, 0, 'ajax_cart_status', 0, '', '', ''),
+(39, 'ajax_cart_add', 'ajax_cart_add', 2800, 37, 0, '', 5, '', 0, 0, 0, 'ajax_cart_add', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -800,5 +815,5 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `caption`, `sort`, `parent`, `folder`, `login`, `email`, `block_control`, `pass`, `uid`, `group`) VALUES
-(1, 'administrator_sayta', 'Администратор сайта', 200, 0, 0, 'admin', 'demo@mail.ru', 1, '21232f297a57a5a743894a0e4a801fc3', '0037699fa571f23e7dcbfa591b596d9c;0a4c7325b7cdfc92ec7a05bd59f6383c;431a89c09bc4f788918aa23311a0f86c;0bfcf6d1787d53b37c9dbc28700188cc;684b12522dfaf529cbbaacec60337642', '1'),
+(1, 'administrator_sayta', 'Администратор сайта', 200, 0, 0, 'admin', 'demo@mail.ru', 1, '21232f297a57a5a743894a0e4a801fc3', '0bfcf6d1787d53b37c9dbc28700188cc;684b12522dfaf529cbbaacec60337642;d8778bb5f2c899655465abba1ed9a6c0;4e329520ba3a9b0440e89d16a46a74dd;e23d5cd81ea15432e4a21c7d297b724a', '1'),
 (3, 'editor', 'editor', 400, 0, 0, 'editor', 'demo@mail.ru', 0, '5aee9dbd2a188839105073571bee1b1f', '', '2');

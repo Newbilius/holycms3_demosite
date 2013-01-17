@@ -1,5 +1,7 @@
 <? if (isset($result)) { ?>
 
+    <? //preprint($result); ?>
+
     <?
     if ($result['foto']) {
         $img = new HolyImg($result['foto']);
@@ -14,6 +16,7 @@
 
     <? echo PrintDate("%d %b %Y", $result['sdate']) ?><br>
     <?
+    $res = new DBlockElement("news");
     $files = $res->GetElementChilds($result['id'], "news_files");
     if (count($files) > 0) {
         ?>
@@ -27,7 +30,6 @@
         }
     };
     ?>
-
     <? echo $result['detail_text']; ?>
 
 <? }; ?>

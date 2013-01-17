@@ -84,6 +84,7 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
             $catalog_c->Execute();
             ?>
             <BR><br>
+            <div id="ajax_cart">
             <?
             $cart_status_c = Component::Factory("cart_status")
                     ->SetParam("table", "catalog")
@@ -93,6 +94,7 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
             ;
             $cart_status_c->Execute();
             ?>
+            </div>
             <br><br>
             Тэги:<br>
             <?
