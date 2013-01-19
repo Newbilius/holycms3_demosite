@@ -37,7 +37,7 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
                     Меню двухуровневое:<BR>
                     <?
                     $menu_c = Component::Factory("main_menu")
-                            ->SetParam("template", "ul_two_levels")
+                            ->SetParam("template", "ul_two_levels_bootstrap")
                             ->SetParam("cache", "auto")
                             ->SetParam("filter", Array("not_visible" => 0, "in_menu" => 1))
                     ;
@@ -46,7 +46,7 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
                     Меню полноуровневое:<BR>
                     <?
                     $menu_c = Component::Factory("main_menu")
-                            ->SetParam("template", "ul_all_levels")
+                            ->SetParam("template", "ul_all_levels_bootstrap")
                             ->SetParam("cache", "auto")
                             ->SetParam("filter", Array("not_visible" => 0, "in_menu" => 1))
                     ;
