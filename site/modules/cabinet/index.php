@@ -39,11 +39,13 @@ if ($user->IsAuth()) {
                 ));
                 $info = $user->GetInfo();
             } else {
+                ?><div class="alert alert-error"><?
                 foreach ($errors as $error) {
                     ?>
                     <p style="color:red;"><? echo $error; ?></p>
                     <?
                 }
+                ?></div><?
             }
         };
     }
@@ -56,10 +58,11 @@ if ($user->IsAuth()) {
         <input type="hidden" name="go" value="1">
 
         ФИО:<br>
-        <input name="fio" value="<? echo $info['fio']; ?>" style="width: 300px;"><br>
+        <input type="text" name="fio" value="<? echo $info['fio']; ?>" style="width: 300px;"><br>
         Адрес доставки:<br>
         <textarea style="width: 300px;height:250px;" name="address"><? echo $info['address']; ?></textarea>
-        <input type="submit" value="сохранить">
+        <br>
+        <input class="btn" type="submit" value="сохранить">
     </form>
 
     <hr>
@@ -71,7 +74,7 @@ if ($user->IsAuth()) {
         <input type="password" name="pass1" value="" style="width: 300px;"><br>
         Повтор нового пароля:<br>
         <input type="password" name="pass2" value="" style="width: 300px;"><br>
-        <input type="submit" value="сохранить">
+        <input class="btn" type="submit" value="сохранить">
     </form>
     <br>
 

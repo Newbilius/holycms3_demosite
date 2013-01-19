@@ -2,7 +2,7 @@
 if ($result['id'] > 0) {
     $tags = new HolyTags($params['table'], "tags", "/tags_filter/#tag#");
     ?>
-
+    <div style="display:none;" id="ajax_status" class="alert alert-success"></div>
     <?
     if ($result['foto']) {
         $img = new HolyImg($result['foto']);
@@ -22,13 +22,12 @@ if ($result['id'] > 0) {
     $url2 = "/ajax/ajax_cart_add?add=" . $result['id'];
     ?>
     <BR>
-    <div id="ajax_status"></div>
-    <a onclick="return AjaxBuy1('<?= $url2 ?>');" href="<?= $url ?>">Купить одну штуку [ajax]</a>
-    <form method="post" action="<? echo ReplaceURL($params['cart_url'], $result); ?>">
+    <a onclick="return AjaxBuy1('<?= $url2 ?>');" href="<?= $url ?>">Купить одну штуку</a>
+    <form id="multi_buy" class="form-inline" method="post" action="<? echo ReplaceURL($params['cart_url'], $result); ?>">
         Купить несколько:
-        <input name="count" value="1">
+        <input type="text" name="count" value="1" style="width:100px;">
         <input type="hidden" name="add" value="<? echo $result['id']; ?>">
-        <input type="submit" value="Купить">
+        <input class="btn" type="submit" value="Купить">
     </form>
     <div style="clear:both"></div>
     <div>
@@ -42,7 +41,7 @@ if ($result['id'] > 0) {
                     $img = new HolyImg($foto_multi);
                     $img->Resize(Array("height" => 150, "width" => 200));
                     ?>
-                    <a class="picture" rel="gal1" href="<? echo $foto_multi ?>"><? echo $img->DrawHref(); ?></a>
+                    <a class="picture" rel="gal1" href="<? echo $foto_multi ?>"><? echo $img->DrawHref(Array("draw_inner" => "style='padding-bottom:10px;'")); ?></a>
                 </div>
                 <?
             }
@@ -86,14 +85,33 @@ if ($result['id'] > 0) {
 
 <script>
     function AjaxBuy1(url_link){
+        $("#ajax_status").hide();
         $.get(url_link,
         function(data){
             $("#ajax_status").html(data);
+            $("#ajax_status").show();
             $.get("/ajax/ajax_cart_status",
             function(data2){
-                $("#ajax_cart").html(data2);
+                $("#ajax_cart").html('<div id="ajax_status" class="alert alert-success">Корзина обновлена</div>'+data2);
             });
         });
         return false;
     }
+
+
+    $('form[id="multi_buy"]').submit(function(event){
+        event.preventDefault();
+        $("#ajax_status").hide();
+        var form_post_data=$('form[id=multi_buy]').serializeArray();
+
+        $.post("/ajax/ajax_cart_add",form_post_data ,
+        function(data) {
+            $("#ajax_status").show();
+            $("#ajax_status").html(data);
+            $.get("/ajax/ajax_cart_status",
+            function(data2){
+                $("#ajax_cart").html('<div id="ajax_status" class="alert alert-success">Корзина обновлена</div>'+data2);
+            });
+        });
+    });
 </script>

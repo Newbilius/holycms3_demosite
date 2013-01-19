@@ -27,17 +27,17 @@ if (isset($item01['id']))
 if ($item01['id'])
 if ($item01['folder']==1){
 ?>
-<form>
+<form class="form-inline">
 Сортировка по
-<select name="by_what">
+<select name="by_what" style="width:120px;">
     <option <? if ($_GET["by_what"]=="caption"){?>selected<?};?> value="caption">По имени</option>
     <option <? if ($_GET["by_what"]=="cost"){?>selected<?};?> value="cost">По цене</option>
 </select>
-<select name="how">
+<select name="how" style="width:170px;">
     <option <? if ($_GET["how"]=="ASC"){?>selected<?};?> value="ASC">По возрастанию</option>
     <option <? if ($_GET["how"]=="DESC"){?>selected<?};?> value="DESC">По убыванию</option>
 </select>
-<input type="submit" value="Поменять">
+<input class="btn" type="submit" value="Поменять">
 </form>
 <br><br>
 <?

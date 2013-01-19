@@ -13,13 +13,13 @@ if ($_GET['cost_min'] > 0)
     $filter[] = Array("cost", ">=", $_GET['cost_min']);
 ?>
 
-<form method="get">
+<form method="get" class="form-inline">
     Цена, от
-    <input name="cost_min" value="<? echo $_GET['cost_min'] ?>">
+    <input name="cost_min" value="<? echo $_GET['cost_min'] ?>" style="width:70px;">
     Цена, до
-    <input name="cost_max" value="<? echo $_GET['cost_max'] ?>">
+    <input name="cost_max" value="<? echo $_GET['cost_max'] ?>" style="width:70px;">
 
-    <input type="submit" value="Искать">
+    <input class="btn" type="submit" value="Искать">
 
 </form>
 
@@ -37,7 +37,7 @@ $catalog_c = Component::Factory("list_items")
         ->SetParam("draw_paginator", true)
         ->SetParam("paginator_url", "/item_find/?PAGE=#PAGE#&cost_min=".$_GET['cost_min']."&cost_max=".$_GET['cost_max'])
         ->SetParam("page", intval($_GET['PAGE']))
-        ->SetParam("count", 3)
+        ->SetParam("count", 4)
 ;
 $catalog_c->Execute();
 ?>

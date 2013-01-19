@@ -43,11 +43,13 @@ if (isset($_POST['go'])) {
 
         HolyMail($_OPTIONS['back_email'], $_OPTIONS['mail'], "Восстановление пароля на сайте ".$_SERVER['HTTP_HOST'], $message);
     } else {
+        ?><div class="alert alert-error"><?
         foreach ($errors as $error) {
             ?>
             <p style="color:red;"><? echo $error; ?></p>
             <?
         }
+        ?></div><?
     }
 }
 
@@ -56,10 +58,9 @@ $_POST = fill_empty_array($_POST, Array(
         ));
 ?>
 
-<form method="post">
+<form method="post" class="form-inline">
     E-mail, на который вы регистрировались:<br>
-    <input name="email" value="<? echo $_POST['email'] ?>" style="width: 300px;"><br>
-
-    <input type="submit">
+    <input type="text" name="email" value="<? echo $_POST['email'] ?>" style="width: 300px;"><br>
+    <input class="btn" type="submit" value="Восстановить">
     <input type="hidden" name="go" value="1">
 </form>

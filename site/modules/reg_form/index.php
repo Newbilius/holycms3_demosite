@@ -37,11 +37,15 @@ else {
             $user->Auth($_POST['email'], $_POST['pass1']);
             Redirect("/cabinet/", true);
         } else {
+            ?>
+<div class="alert alert-error">
+    <?
             foreach ($errors as $error) {
                 ?>
                 <p style="color:red;"><? echo $error; ?></p>
                 <?
-            }
+            }?>
+</div><?
         }
     }
 
@@ -54,7 +58,7 @@ else {
 
     <form method="post">
         E-mail:<br>
-        <input name="email" value="<? echo $_POST['email'] ?>" style="width: 300px;"><br>
+        <input type="text" name="email" value="<? echo $_POST['email'] ?>" style="width: 300px;"><br>
 
         Пароль:<br>
         <input type="password" name="pass1" value="<? echo $_POST['pass1'] ?>" style="width: 300px;"><br>
@@ -62,7 +66,7 @@ else {
         <input type="password" name="pass2" value="<? echo $_POST['pass2'] ?>" style="width: 300px;"><br>
 
         <input type="hidden" name="go" value="1">
-        <input type="submit">
+        <input class="btn" type="submit" value="Регистрация">
 
     </form>
 

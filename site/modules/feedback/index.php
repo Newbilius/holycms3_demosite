@@ -32,11 +32,17 @@ if (isset($_POST['go'])) {
         
         HolyMail("info@" . $_SERVER['HTTP_HOST'], $_OPTIONS['mail'], "Заполнена форма обратной связи", $mail_text);
     } else {
+      ?>  <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <?
         foreach ($errors as $error) {
             ?>
             <p style="color:red;"><? echo $error; ?></p>
             <?
         }
+        ?>
+            </div>
+<?
     }
 }
 
@@ -49,14 +55,14 @@ $_POST = fill_empty_array($_POST, Array(
 
 <form method="post">
     Ваше имя:<br>
-    <input name="fio" value="<? echo $_POST['fio'] ?>" style="width: 300px;"><br>
+    <input type="text" name="fio" value="<? echo $_POST['fio'] ?>" style="width: 300px;"><br>
 
     Обратный адрес или телефон:<br>
-    <input name="info" value="<? echo $_POST['info'] ?>" style="width: 300px;"><br>
+    <input type="text" name="info" value="<? echo $_POST['info'] ?>" style="width: 300px;"><br>
 
     Текст:<br>
-    <textarea name="text" style="width: 300px;"><? echo $_POST['text'] ?></textarea><br> 
+    <textarea name="text" style="width: 300px;height:120px;"><? echo $_POST['text'] ?></textarea><br> 
 
-    <input type="submit">
+    <input class="btn btn-primary" type="submit" value="Отправить">
     <input type="hidden" name="go" value="1">
 </form>
