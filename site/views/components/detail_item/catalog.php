@@ -6,7 +6,7 @@ if ($result['id'] > 0) {
     <?
     if ($result['foto']) {
         $img = new HolyImg($result['foto']);
-        $img->Resize(Array("height" => 80, "width" => 200));
+        $img->Resize(Array("height" => 200, "width" => 200));
         ?>
         <a rel="gal1" class='picture' href="<? echo $result['foto']; ?>"><?
         echo $img->DrawHref(Array(

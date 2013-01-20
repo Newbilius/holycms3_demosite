@@ -42,16 +42,14 @@ if ($user->IsAuth()) {
                 ?><div class="alert alert-error"><?
                 foreach ($errors as $error) {
                     ?>
-                    <p style="color:red;"><? echo $error; ?></p>
-                    <?
-                }
-                ?></div><?
+                        <p style="color:red;"><? echo $error; ?></p>
+                        <?
+                    }
+                    ?></div><?
             }
         };
     }
-    ?>
-
-
+        ?>
     <h2>Данные</h2>
     E-mail: <b><? echo $info['email']; ?></b>
     <form method="post">
@@ -64,12 +62,10 @@ if ($user->IsAuth()) {
         <br>
         <input class="btn" type="submit" value="сохранить">
     </form>
-
     <hr>
     <h2>Смена пароля</h2>
     <form method="post">
         <input type="hidden" name="go" value="2">
-
         Новый пароль:<br>
         <input type="password" name="pass1" value="" style="width: 300px;"><br>
         Повтор нового пароля:<br>
@@ -77,11 +73,14 @@ if ($user->IsAuth()) {
         <input class="btn" type="submit" value="сохранить">
     </form>
     <br>
-
     <?
 } else {
     Component::Factory("auth_user_form")
             ->SetParam("cabinet_url", "/cabinet/")
+            ->Execute();
+    Component::Factory("auth_user_form_social")
+            ->SetParam("module_url", "/cabinet/")
+            ->SetParam("cabinet_url", "/cabinet/") //@fix почему не устанавливается?!!!!
             ->Execute();
 };
 
@@ -93,6 +92,12 @@ if (isset($_GET['exit'])) {
 
 
 <? if ($user->IsAuth()) { ?>
+    <h4>Привязать ещё социальных аккаунтов к текущему:</h4>
+        <?Component::Factory("auth_user_form_social")
+            ->SetParam("module_url", "/ajax/social_reg")
+            ->SetParam("cabinet_url", "/cabinet/") //@fix почему не устанавливается?!!!!
+            ->Execute();
+            ?>
     <hr><a href="?exit=yes">выйти</a>
 <? }; ?>
 
