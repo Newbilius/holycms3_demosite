@@ -79,8 +79,8 @@ if ($user->IsAuth()) {
             ->SetParam("cabinet_url", "/cabinet/")
             ->Execute();
     Component::Factory("auth_user_form_social")
-            ->SetParam("module_url", "/cabinet/")
-            ->SetParam("cabinet_url", "/cabinet/") //@fix почему не устанавливается?!!!!
+            ->SetParam("module_url", "/ajax/ajax_social_reg")
+            ->SetParam("cabinet_url", "/cabinet/") //@fix почему не устанавливается (?!!!!)
             ->Execute();
 };
 
@@ -93,8 +93,9 @@ if (isset($_GET['exit'])) {
 
 <? if ($user->IsAuth()) { ?>
     <h4>Привязать ещё социальных аккаунтов к текущему:</h4>
-        <?Component::Factory("auth_user_form_social")
-            ->SetParam("module_url", "/ajax/social_reg")
+        <?
+        Component::Factory("auth_user_form_social")
+            ->SetParam("module_url", "/ajax/ajax_social_reg")
             ->SetParam("cabinet_url", "/cabinet/") //@fix почему не устанавливается?!!!!
             ->Execute();
             ?>

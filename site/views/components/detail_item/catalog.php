@@ -16,7 +16,12 @@ if ($result['id'] > 0) {
     <? }; ?>
 
     <? echo $result['cost']; ?> руб.<br>
-    <? echo $result['detail_text']; ?>
+    <?
+    $result2=$result;
+    $result2['foto_multi']=explode(";",$result2['foto_multi']);
+    //preprint($result2);
+    ?>
+    <? echo ReplaceURL($result['detail_text'],$result2); ?>
     <?
     $url = ReplaceURL($params['cart_url'], $result);
     $url2 = "/ajax/ajax_cart_add?add=" . $result['id'];
