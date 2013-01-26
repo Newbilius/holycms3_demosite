@@ -99,7 +99,7 @@ if (isset($_GET['exit'])) {
             ->SetParam("cabinet_url", "/cabinet/") //@fix почему не устанавливается?!!!!
             ->Execute();
             ?>
-    <hr><a href="?exit=yes">выйти</a>
+    <hr><a class="btn btn-primary" href="?exit=yes">выйти</a>
 <? }; ?>
 
 <? if (!$user->IsAuth()) { ?>
