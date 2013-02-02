@@ -1,13 +1,13 @@
 <? if (!defined('HCMS')) die(); ?>
+<link rel="stylesheet" type="text/css" href="/site/css/state_bootstrap.min.css"  />
 <?
 $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPTIONS)->Draw();
 ?>
-<link rel="stylesheet" type="text/css" href="/engine/js/bootstrap/css/bootstrap.min.css"  />
 <body>
     <div class="navbar">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand" href="#"><?= $_OPTIONS['slogan'] ?></a>
+                <a class="brand" href="/"><?= $_OPTIONS['slogan'] ?></a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <?

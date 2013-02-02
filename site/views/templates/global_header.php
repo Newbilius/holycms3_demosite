@@ -12,7 +12,6 @@
 <script type="text/javascript" src="/engine/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="/engine/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 <script src="/engine/js/bootstrap/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/engine/js/bootstrap/css/bootstrap.min.css"  />
 <link rel="alternate" type="application/rss+xml" title="Тестовая RSS тестового сайта " href="/rss/" />
 <? PopUpImages();?>
 <?=$_OPTIONS['header_code']?>
