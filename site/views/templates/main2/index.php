@@ -148,4 +148,9 @@ $global_header = View::Factory("templates/global_header")->Set("_OPTIONS", $_OPT
 
     </div>
 </body>
+<style>
+#footer {
+  background-color: #202328;
+}
+</style>
 </html>
